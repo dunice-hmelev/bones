@@ -17,7 +17,8 @@
         "backbone": "0.5.3",
         "jquery": "~1.6.3",
         "optimist": "0.3.x",
-        "mirror": "0.3.x"
+        "mirror": "0.3.x",
+	    "backbone-couch": "https://github.com/dunice-hmelev/backbone-couch/tarball/master"
     },
 
     "scripts": {
@@ -28,3 +29,4 @@
       "node": "0.4 || 0.6 || 0.8"
     }
 }
+
