@@ -20,5 +20,23 @@ couch.install(function(err) {
     Backbone.sync = couch.sync;
 });
 
+
+// Generate four random hex digits.
+function S4() {
+   return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
+};
+
+// Generate a pseudo-GUID by concatenating random hexadecimal.
+function guid() {
+   return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
+};
+
+
+Backbone.Model.prototype.initialize = function () {
+    Backbone.Model.prototype.initialize.apply(this, arguments);
+    this.id = guid();
+}
+
+
 // Backbone.sync will now load and save models from a 'documents' couch db.
 
